@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-home {
+    @apply flex
+        w-full h-full
+        flex-col
+        overflow-hidden
+        relative;
+  }
+  .main-home.inactive {
+    @apply pointer-events-none 
+    cursor-not-allowed;
+  }
+
+  .loading-div {
+    @apply absolute 
+    top-1/2
+    left-1/2
+    transform -translate-x-1/2 -translate-y-1/2
+    bg-white
+    w-[150px]
+    h-[50px]
+    shadow-sm
+    shadow-myshadow-200
+    border border-black
+    flex
+    justify-center
+    items-center;
+    z-index: 999;
+  }
+  .loading-div p {
+    @apply font-mono;
+  }
+  .the-home {
+    @apply flex
+    w-full
+    h-full
+    overflow-hidden
+    transition ease-in delay-300;
+  }
+
+  .the-home.inactive {
+    @apply pointer-events-none opacity-35;
+  }
+
+  .right {
+    @apply flex
+    flex-col
+    w-full
+    h-full
+    overflow-hidden;
+  }
+  .table-div {
+    @apply flex
+    overflow-y-auto
+    w-full
+    basis-2/3
+    items-start;
+  }
+  .unknown {
+    @apply flex
+    flex-col
+    justify-start
+    items-center
+    w-full
+    h-[100px]
+    overflow-hidden;
+  }
+  .receipts-div {
+    @apply flex
+    justify-start
+    items-center
+    w-full;
+  }
+  .receipt-item-div {
+    @apply flex
+    justify-between
+    m-1
+    border border-black
+    min-w-[200px]
+    gap-2;
+  }
+  .r-details {
+    @apply flex flex-col
+    justify-between
+    cursor-pointer;
+  }
+  .r-details p {
+    @apply ml-2;
+  }
+  .r-id-text {
+    @apply font-semibold
+    font-mono text-slate-600;
+  }
+  .r-name-text {
+    @apply text-[14px]
+    font-mono
+    text-slate-600;
+  }
+  .r-dates {
+    @apply flex
+    flex-col
+    justify-between
+    items-center
+    cursor-pointer;
+  }
+  .r-dates p {
+    @apply mr-1
+    text-[13px]
+    text-slate-600;
+  }
+  .r-total-text {
+    @apply text-[16px]
+    font-mono
+    text-mygreen;
+  }
+  .pr-div {
+    @apply w-full
+    flex
+    justify-end;
+  }
+  .r-dates button {
+    @apply flex justify-center
+    items-center
+    mr-1
+    border border-slate-400
+    hover:bg-slate-500;
+  }
+  .r-dates button img {
+    @apply h-[25px] w-[25px]
+    p-1;
+  }
+  .known {
+    @apply flex
+    flex-col
+    overflow-hidden
+    h-full
+    basis-2/5;
+  }
+  .item-list-div {
+    @apply flex
+    flex-col
+    justify-start
+    my-1
+    gap-2
+    overflow-y-auto;
+  }
+  .the-item {
+    @apply flex
+    border border-slate-400
+    mx-1;
+  }
+  .the-item.selected {
+    @apply border-dashed border-2 border-blue-500;
+  }
+  .item-content {
+    @apply flex
+    m-1
+    flex-col
+    w-full;
+  }
+  .i-name {
+    @apply text-[18px]
+    font-semibold
+    font-mono
+    text-slate-600;
+  }
+  .desc-div {
+    @apply flex
+    justify-between
+    items-center
+    w-full;
+  }
+  .i-desc {
+    @apply text-[14px]
+    text-slate-400;
+  }
+  .i-price {
+    @apply font-semibold
+    font-mono
+    text-[14px];
+  }
+
+  .footer-home {
+    @apply border border-slate-400
+    flex flex-col
+    basis-1/3
+    m-1;
+  }
+  .top-footer {
+    @apply flex
+    justify-between
+    items-start;
+  }
+  .down-footer {
+    @apply flex
+    justify-end
+    items-center
+    w-full;
+  }
+  .home-actions {
+    @apply flex
+    justify-center
+    items-center
+    gap-2;
+  }
+  .top-left {
+    @apply flex
+    justify-center
+    items-start
+    gap-3;
+  }
+  .money-div {
+    @apply flex
+    flex-col
+    justify-center
+    items-center;
+  }
+  .tot-div {
+    @apply mr-2;
+  }
+  .label {
+    @apply text-[14px] font-bold font-mono text-slate-400;
+  }
+  .tot-amt {
+    @apply text-[34px]
+    font-mono
+    text-mygreen
+    font-bold;
+  }
+  .error-on-i p {
+    @apply ml-2
+    text-[13px]
+    font-semibold
+    text-red-600
+    hidden;
+  }
+
+  /* table styling */
+  .table-div table {
+    @apply w-full
+    mr-1
+    cursor-pointer;
+  }
+  .table-div table th {
+    @apply border border-black
+    font-normal
+    font-mono;
+  }
+  .table-div table tbody tr {
+    @apply text-center
+    text-[16px]
+    font-normal
+    font-mono
+    text-slate-600;
+  }
+  .table-div table tbody td {
+    @apply p-1
+    border border-black;
+  }
+  .table-div table tbody tr:hover {
+    @apply bg-slate-500 text-white !important;
+  }
+  .table-div table tbody tr:nth-child(odd) {
+    @apply bg-slate-100;
+  }
+  .table-div table tbody tr.selected {
+    @apply bg-slate-700 text-white !important;
+  }
+}

@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-itemlist {
+    @apply flex
+    flex-col
+        w-full
+        h-full
+        overflow-hidden
+        relative;
+  }
+  .label-item {
+    @apply flex
+    sticky
+    top-0
+    font-bold;
+  }
+  .label-item p {
+    @apply text-[14]
+    text-gray-400;
+  }
+  .prod-div {
+    @apply overflow-y-auto
+    flex
+    h-full
+    flex-col
+    w-full
+    mt-2;
+  }
+  .product-div {
+    @apply flex
+    w-full
+    flex-col
+    mb-4
+    shadow-sm
+    shadow-myshadow-200
+    border border-myshadow-200;
+  }
+  .div-marg {
+    @apply mx-2;
+  }
+  .div-name {
+    @apply flex
+    justify-start
+    div-marg;
+  }
+  .div-name p {
+    @apply font-semibold
+    font-mono
+    text-[16px];
+  }
+  .div-describe {
+    @apply flex
+    justify-start
+    div-marg;
+  }
+  .div-describe p {
+    @apply text-[14px]
+    text-slate-400;
+  }
+  .div-prices {
+    @apply flex
+    justify-between
+    div-marg;
+  }
+  .div-prices p {
+    @apply font-mono
+    text-[14px];
+  }
+  .price-div {
+    @apply flex
+    justify-start
+    items-center;
+  }
+}

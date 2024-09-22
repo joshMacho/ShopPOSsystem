@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .root {
+    @apply w-[100vw]
+    h-[100vh]
+    flex
+    flex-col
+    overflow-hidden;
+    padding: 8px;
+  }
+  .main-top {
+    @apply flex
+    w-full
+    shadow-sm
+    shadow-slate-400
+    mb-1;
+  }
+  .main-body {
+    @apply flex
+    basis-10/12
+    overflow-hidden;
+  }
+
+  .add-div {
+    @apply flex
+    w-full
+    items-center
+    justify-end;
+  }
+  .add-div button {
+    @apply p-2
+    text-[14px]
+    flex
+    justify-center
+    items-center
+    border border-black
+    shadow-md
+    shadow-myshadow-200
+    hover:shadow-md
+    mt-2
+    hover:font-semibold
+    disabled:cursor-not-allowed
+    disabled:opacity-50
+    disabled:border-gray-400;
+  }
+  .add-div button img {
+    @apply w-[15px] h-[15px];
+  }
+
+  .input-div {
+    @apply flex
+    flex-col
+    space-y-1;
+  }
+  .input-div label {
+    @apply text-[12px]
+    font-mono
+    font-semibold
+    mx-2;
+  }
+  .input-div input {
+    @apply border border-slate-400
+    text-[14px]
+    focus:outline-none
+    px-4 py-1
+    mx-1
+    read-only:cursor-not-allowed
+    read-only:text-slate-300;
+  }
+  .sub-div {
+    @apply flex
+    justify-center
+    items-center
+    mb-4;
+  }
+  .sub-div button {
+    @apply p-1
+    flex
+    items-center
+    justify-center
+    gap-8
+    border border-black
+    w-full
+    hover:shadow-sm
+    hover:shadow-myshadow-200
+    disabled:text-slate-300
+    disabled:cursor-not-allowed
+    disabled:border-gray-400;
+  }
+  .sub-div button p {
+    @apply font-bold
+    font-mono;
+  }
+
+  .custom-select {
+    border-radius: 0;
+  }
+
+  .custon-select:focus {
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #4a5568;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #2d3748; /* Hover color */
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #cbd5e0; /* Track color */
+  }
+  ::-webkit-scrollbar-track:hover {
+    background-color: #a0aec0; /* Hover track color */
+  }
+}

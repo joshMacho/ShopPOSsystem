@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-item {
+    @apply flex
+        
+        w-full
+        overflow-hidden;
+  }
+  .item-form {
+    @apply flex
+    flex-col
+    justify-between
+    min-w-[400px]
+    h-full
+    ml-10;
+  }
+  .entrys {
+    @apply flex
+    flex-col
+    space-y-2
+    mx-2 mt-2
+    overflow-y-auto;
+  }
+
+  .items-div {
+    @apply flex
+    w-[400px]
+    mx-5;
+  }
+  .error-section {
+    @apply text-red-600;
+  }
+}

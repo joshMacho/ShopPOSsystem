@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .head-new {
+    @apply w-full
+    h-full
+    flex flex-col
+    overflow-hidden;
+  }
+  .main-new {
+    @apply flex
+      w-full
+      overflow-hidden
+      mb-1
+      h-full;
+  }
+  .left-nav {
+    @apply flex
+    flex-col
+    justify-start
+    space-y-5
+    h-full;
+  }
+  .link-button {
+    @apply flex
+    items-center
+    justify-center
+    rounded-full
+    w-[50px]
+    h-[50px]
+    hover:bg-myshadow-100
+    shadow-md
+    shadow-myshadow-200
+    mx-2;
+  }
+  .link-button img {
+    @apply p-1;
+  }
+  .new-body {
+    @apply flex
+    w-full;
+  }
+}

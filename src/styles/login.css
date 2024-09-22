@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-login-div {
+    @apply flex
+    w-full
+    h-full
+    justify-center
+    items-center
+    bg-slate-200;
+  }
+  .login-div {
+    @apply items-center 
+    flex 
+    flex-col
+    w-1/2
+    h-[400px]
+    bg-white
+    rounded-md
+    shadow-md
+    shadow-myshadow-200;
+  }
+  .h-text {
+    @apply flex justify-center items-center
+    basis-1/4
+    text-[20px]
+    font-semibold
+    text-gray-600;
+  }
+  .form-div {
+    @apply flex
+    flex-col
+    gap-5
+    basis-3/4
+    w-1/2;
+  }
+}

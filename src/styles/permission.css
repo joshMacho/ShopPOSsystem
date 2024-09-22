@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-permit {
+    @apply w-full
+    h-full
+    flex;
+  }
+  .body-p {
+    @apply flex
+    mx-2
+    w-full
+    overflow-hidden;
+  }
+  .users-d {
+    @apply flex
+    flex-col
+    w-1/2
+    h-full;
+  }
+  .seluser {
+    @apply border-dashed border-2 border-mygreen;
+  }
+  .user-lab {
+    @apply flex
+    justify-start
+    items-center;
+  }
+  .user-lab p {
+    @apply text-slate-600
+    font-bold
+    font-mono
+    p-1;
+  }
+  .usr-list {
+    @apply flex
+    flex-col
+    h-full
+    w-full
+    overflow-y-auto;
+  }
+  .permissions-div {
+    @apply flex
+    w-1/2
+    h-full
+    flex-col;
+  }
+  .tick-permission-div {
+    @apply grid
+    grid-cols-2;
+  }
+  .give-access {
+    @apply flex
+    justify-between
+    items-center
+    mb-2;
+  }
+  .give-access p {
+    @apply ml-2
+    font-mono;
+  }
+  .nosel {
+    @apply text-slate-500;
+  }
+  .sel {
+    @apply text-mygreen;
+  }
+}

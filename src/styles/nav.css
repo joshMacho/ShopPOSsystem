@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-navigation {
+    @apply w-full
+        flex
+        justify-between
+        items-center;
+  }
+  .navbuts-div {
+    @apply flex
+    space-x-2
+    ml-5
+    my-2;
+  }
+  .navbuts-div button {
+    @apply flex
+    items-center
+    justify-center
+    space-x-3
+    px-1
+    w-[140px]
+    h-[35px]
+    shadow-sm
+    shadow-myshadow-200
+    hover:bg-myshadow-100;
+  }
+  .navbuts-div p {
+    @apply text-[16px]
+    font-semibold
+    text-slate-400;
+  }
+  .settings {
+    @apply flex
+    justify-center
+    items-center
+    shadow-sm
+    mr-2
+    shadow-slate-500
+    hover:shadow-md
+    transition-shadow
+    delay-100
+    ease-in-out
+    relative;
+  }
+  .set {
+    @apply flex
+    mx-2
+    my-1
+    justify-between
+    items-center
+    w-full
+    gap-3;
+  }
+  .set img {
+    @apply h-[20px] w-[20px]
+    cursor-pointer;
+  }
+  .set p {
+    @apply font-mono
+    text-gray-400
+    cursor-pointer;
+  }
+  .sett-popup {
+    @apply absolute
+    top-full
+    w-full
+    z-10
+    border border-black
+    bg-white
+    shadow-md
+    shadow-myshadow-100;
+  }
+  .sett-popup button {
+    @apply flex
+    justify-center items-center
+    w-full
+    hover:bg-slate-300
+    h-[30px]
+    font-semibold;
+  }
+}

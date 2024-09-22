@@ -1,0 +1,51 @@
+return (
+    <MaterialReactTable
+      columns={columns}
+      data={data}
+      enableColumnResizing
+      enableGrouping
+      enableStickyHeader
+      enableStickyFooter
+      initialState={{
+        columnVisibility: {
+          destination: false,
+        },
+
+        density: "comfortable",
+        expanded: true, //expand all groups by default
+
+        //grouping: ['shipper'], //an array of columns to group by by default (can be multiple)
+        pagination: { pageIndex: 0, pageSize: 5 }, //sort by state by default
+      }}
+      muiToolbarAlertBannerChipProps={{ color: "primary" }}
+      //muiTableContainerProps={{ sx: { maxHeight: 200 } }}
+    />
+  );
+
+  ## formal search and select elements
+  <div className="ss">
+              <div className="search-div1">
+                <img src={searchicn} />
+                <input
+                  type="text"
+                  placeholder="Search for item"
+                  name="search"
+                  value={searchv}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <select className="i-select" name="select">
+                {filtered.map((item, index) => (
+                  <option value={item.name} key={index}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+ ## filters
+   const filtered =
+    searchv === "" || null
+      ? items
+      : items.filter((item) =>
+          item.name.toLocaleLowerCase().includes(searchv.toLocaleLowerCase())
+        );

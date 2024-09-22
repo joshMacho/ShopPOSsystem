@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .user-page {
+    @apply w-full
+    flex 
+    overflow-hidden;
+  }
+  .new-user-form {
+    @apply flex 
+    flex-grow;
+  }
+  .entrys {
+    @apply flex
+    w-full
+    overflow-x-hidden
+    overflow-y-auto;
+  }
+  .id-page {
+    @apply w-full;
+  }
+  .identity-lists {
+  }
+  .id-item {
+    @apply shadow-sm
+    shadow-myshadow-200
+    border border-myshadow-200;
+  }
+  .id-name {
+    @apply font-mono
+    mt-1
+    mx-1;
+  }
+  .id-actions {
+    @apply flex
+    justify-between
+    text-[14px]
+    mt-1
+    mx-1;
+  }
+  .id-form .input-div {
+    @apply my-2;
+  }
+  .close {
+    @apply h-6 w-full bg-red-400
+    flex justify-center items-center
+    cursor-pointer;
+  }
+  .close p {
+    @apply font-medium;
+  }
+  .actlinks {
+    @apply cursor-pointer;
+  }
+  .edit {
+    @apply hover:text-blue-500;
+  }
+  .delete {
+    @apply hover:text-red-700;
+  }
+  .list-label {
+    @apply text-[14px]
+    font-medium
+    mb-2
+    w-full;
+    border-bottom: 1px solid black;
+  }
+  .identity {
+    @apply flex flex-grow;
+  }
+  .userList {
+    @apply flex flex-col
+    flex-grow;
+  }
+  .user-members {
+    @apply flex flex-col
+    w-full
+    h-full
+    overflow-y-auto;
+  }
+  .member {
+    @apply flex
+    m-1
+    border border-myshadow-200
+    shadow-sm
+    shadow-myshadow-200
+    relative;
+  }
+  .m-info {
+    @apply flex flex-col
+    w-full
+    mx-2;
+  }
+  .m-name {
+    @apply font-mono
+    font-bold
+    cursor-pointer;
+  }
+  .m-id {
+    @apply text-[14px] font-medium
+    cursor-pointer;
+  }
+  .phonedate {
+    @apply flex
+    justify-between
+    w-full
+    text-[14px]
+    cursor-pointer;
+  }
+  .action {
+    @apply flex
+    items-center
+    justify-center;
+  }
+  .action img {
+    @apply w-[30px] h-[30px];
+  }
+  .opt-actions {
+    @apply absolute
+    top-full
+    right-0
+    flex flex-col
+    z-50
+    w-1/2
+    border border-black;
+  }
+  .opt-actions button {
+    @apply h-8
+    border border-slate-400
+    hover:shadow-sm
+    hover:shadow-myshadow-200
+    hover:font-bold;
+  }
+}

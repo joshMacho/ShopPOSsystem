@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-dash {
+    @apply flex
+        w-full
+        h-full
+        justify-center
+        items-center
+        overflow-hidden;
+  }
+  .all-dash {
+    @apply flex
+    flex-col
+    w-full;
+  }
+  .dash-body {
+    @apply grid
+        grid-cols-3
+        overflow-x-hidden
+        overflow-y-auto
+        h-full
+        gap-8;
+  }
+  .footer {
+    @apply flex
+    justify-between
+    items-center
+    mx-4
+    mt-2;
+  }
+  .time {
+    @apply font-semibold;
+  }
+  .time span {
+    @apply text-[15px]
+    font-light;
+  }
+  .load-fetch {
+    @apply flex
+    bg-gray-600
+    rounded-md
+    shadow-md
+    hover:shadow-myshadow-100;
+  }
+  .fetchbtn {
+    @apply flex
+    justify-center
+    items-center
+    shadow-md
+    shadow-myshadow-100
+    rounded-md
+    text-myshadow-200
+    border
+    border-myshadow-200
+    hover:border-black
+    hover:text-white;
+  }
+  .fetchbtn p {
+    @apply font-semibold
+    p-1
+    ml-2;
+  }
+  .fetchbtn img {
+    @apply mr-2;
+  }
+}
