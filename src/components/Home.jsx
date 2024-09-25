@@ -34,6 +34,7 @@ function Home() {
   });
   const [loading, setLoading] = useState({
     saveLoading: false,
+    printLoading: false,
   });
   const [err, setErr] = useState({
     qntError: false,
@@ -212,6 +213,7 @@ function Home() {
         toast.success(response.data.message);
         clearAll();
         setLoading((prevState) => ({ ...prevState, saveLoading: false }));
+        fetchReceipts();
       })
       .catch((error) => {
         toast.error(error.response.data.message);
@@ -219,14 +221,46 @@ function Home() {
       });
   };
 
+  // print request
+  const printReceipt = async (e, id) => {
+    e.preventDefault();
+    setLoading((prevState) => ({ ...prevState, printLoading: true }));
+    const payload = {
+      receipt_id: id,
+      user_id: auth.id,
+    };
+    await axios
+      .post(`${apiUrl}/print`, payload)
+      .then((response) => {
+        toast.success(response.data);
+        setLoading((prevState) => ({ ...prevState, printLoading: false }));
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+        setLoading((prevState) => ({ ...prevState, printLoading: false }));
+      });
+  };
+
   return (
-    <div className={`main-home ${loading.saveLoading ? "inactive" : ""}`}>
-      <div className={`${loading.saveLoading ? "loading-div" : "hidden"}`}>
+    <div
+      className={`main-home ${
+        loading.saveLoading || loading.printLoading ? "inactive" : ""
+      }`}
+    >
+      <div
+        className={`${
+          loading.saveLoading || loading.printLoading ? "loading-div" : "hidden"
+        }`}
+      >
         <Loading />
         <p>Saving...</p>
       </div>
       <NavigationBar />
-      <div className={`the-home ${loading.saveLoading ? "inactive" : ""}`}>
+      <div
+        className={`the-home ${
+          loading.saveLoading || loading.printLoading ? "inactive" : ""
+        }`}
+      >
         <div className="known">
           <div className="input-div">
             <label htmlFor="search">Search Item</label>
@@ -288,7 +322,7 @@ function Home() {
                       <p>{item.timeOnly}</p>
                       <p>{item.date_of}</p>
                       <div className="pr-div">
-                        <button>
+                        <button onClick={(e) => printReceipt(e, item.id)}>
                           <img src={printIcn} alt="print" />
                         </button>
                       </div>
@@ -389,11 +423,6 @@ function Home() {
                     onClick={(e) => savePurchase(e)}
                   >
                     <img src={saveIcn} alt="save" />
-                  </button>
-                </div>
-                <div className="add-div">
-                  <button>
-                    <img src={printIcn} alt="print" />
                   </button>
                 </div>
               </div>

@@ -41,10 +41,11 @@ function IdentityType() {
       .post(`${apiUrl}/addidtype`, values)
       .then((response) => {
         toast.success(response.data.message);
+        fetchIdTypes();
         resetForm();
       })
       .catch((error) => {
-        toast.error(error.message);
+        toast.error(error.response.data.message);
         console.log(error);
       });
   };
@@ -92,11 +93,11 @@ function IdentityType() {
       .then((response) => {
         toast.success(response.data.message);
         resetForm();
+        fetchIdTypes();
         setIsEdit(false);
       })
       .catch((error) => {
-        toast.error(error.message);
-        console.log(error.message);
+        toast.error(error.response.data.message);
       });
   };
 

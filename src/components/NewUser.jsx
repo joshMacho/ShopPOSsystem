@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/newuser.css";
+import "../App.css";
 import { useFormik } from "formik";
 import { userValidations } from "./validations";
 import IdentityType from "./IdentityType";
@@ -155,7 +156,7 @@ function NewUser() {
         fetchUsers();
       })
       .catch((error) => {
-        toast.error(`Unable to remove user ${error.message}`);
+        toast.error(`Unable to remove user ${error.response.data.message}`);
       });
   };
 
@@ -336,7 +337,7 @@ function NewUser() {
                   <p>{user.isActive ? "Deactivate" : "Activate"}</p>
                 </button>
                 <button onClick={() => editUser(user.id)}>
-                  <p>Edit</p>
+                  <p>Update User</p>
                 </button>
                 <button onClick={() => deleteuser(user.id)}>
                   <p>Remove</p>

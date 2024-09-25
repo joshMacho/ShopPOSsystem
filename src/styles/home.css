@@ -73,14 +73,17 @@
     @apply flex
     justify-start
     items-center
-    w-full;
+    w-full
+    overflow-y-hidden
+    overflow-x-auto;
   }
   .receipt-item-div {
     @apply flex
     justify-between
     m-1
     border border-black
-    min-w-[200px]
+    shrink-0
+    min-w-[250px]
     gap-2;
   }
   .r-details {

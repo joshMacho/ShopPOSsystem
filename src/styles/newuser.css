@@ -43,14 +43,7 @@
   .id-form .input-div {
     @apply my-2;
   }
-  .close {
-    @apply h-6 w-full bg-red-400
-    flex justify-center items-center
-    cursor-pointer;
-  }
-  .close p {
-    @apply font-medium;
-  }
+
   .actlinks {
     @apply cursor-pointer;
   }

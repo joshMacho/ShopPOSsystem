@@ -299,20 +299,4 @@
     @apply pl-2
     text-[14];
   }
-  .pop-click {
-    @apply flex
-    items-center
-    justify-center
-    hover:bg-gray-300;
-  }
-  .pop-click img {
-    @apply p-1
-    w-[30px] h-auto;
-  }
-  .rotate-icon {
-    @apply rotate-90
-    transition-transform
-    ease-in-out
-    delay-300;
-  }
 }

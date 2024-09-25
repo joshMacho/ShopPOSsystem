@@ -90,9 +90,68 @@
     disabled:cursor-not-allowed
     disabled:border-gray-400;
   }
+
   .sub-div button p {
     @apply font-bold
     font-mono;
+  }
+
+  .pop-click {
+    @apply flex
+    items-center
+    justify-center
+    hover:bg-gray-300;
+  }
+  .pop-click img {
+    @apply p-1
+    w-[30px] h-auto;
+  }
+  .rotate-icon {
+    @apply rotate-90
+    transition-transform
+    ease-in-out
+    delay-100;
+  }
+  .close {
+    @apply h-6 w-full bg-red-400
+    flex justify-center items-center
+    cursor-pointer;
+  }
+  .close p {
+    @apply font-medium;
+  }
+
+  .popup-dropdown {
+    @apply flex
+    flex-col
+    justify-between
+    items-center
+    top-full
+    right-0
+    w-1/2
+    absolute
+    border border-black
+    bg-white;
+    z-index: 999;
+  }
+  .popup-dropdown button {
+    @apply flex
+    justify-start
+    items-center
+    border border-b-gray-400
+    w-full
+    gap-2
+    h-[30px]
+    hover:bg-gray-300
+    hover:font-semibold
+    transition-colors
+    duration-500
+    disabled:opacity-30
+    disabled:cursor-not-allowed;
+  }
+  .popup-dropdown button p {
+    @apply pl-2
+    text-[14];
   }
 
   .custom-select {

@@ -1,4 +1,5 @@
 import "../styles/dashboard.css";
+import "../App.css";
 import axios from "axios";
 import DashItem from "./DashItem";
 import moneyicn from "../assets/icons/money.svg";
@@ -48,8 +49,8 @@ function Dashboard() {
         <p className="time">
           Last modified: <span>{fetchdate}</span>
         </p>
-        <div className="load-fetch">
-          <button className="fetchbtn" onClick={(e) => fetchwallet(e)}>
+        <div className="sub-div">
+          <button onClick={(e) => fetchwallet(e)}>
             <p>Fetch Wallet</p>
             <img src={fetchicn} />
           </button>

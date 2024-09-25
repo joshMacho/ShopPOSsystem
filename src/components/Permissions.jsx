@@ -38,6 +38,7 @@ function Permissions() {
     stats: false,
     invoice: false,
     new_: false,
+    role: "",
   });
   const [selectedUser, setSelectedUser] = useState(null);
 
@@ -55,6 +56,7 @@ function Permissions() {
         stats: false,
         invoice: false,
         new_: false,
+        role: "",
       });
     }
   }, [selectedUser]);
@@ -70,6 +72,7 @@ function Permissions() {
           stats: response.data.stats,
           invoice: response.data.invoice,
           new_: response.data.new,
+          role: response.data.role,
         });
       })
       .catch((error) => {
@@ -113,6 +116,25 @@ function Permissions() {
         toast.error(`Unable to update, ${error.message}`);
         console.log(error);
       });
+  };
+
+  const updateRole = async (e) => {
+    e.preventDefault();
+    await axios
+      .post(`${apiUrl}/updaterole/${selectedUser}`, { role: permissions.role })
+      .then((response) => {
+        toast.success(response.data.message);
+        setSelectedUser(null);
+      })
+      .catch((error) => {
+        toast.error(`Unable to update, ${error.message}`);
+        console.log(error);
+      });
+  };
+
+  // handle radio change
+  const handleRadioChange = (e) => {
+    setPermissions((prevState) => ({ ...prevState, role: e.target.value }));
   };
 
   return (
@@ -168,6 +190,53 @@ function Permissions() {
                 <p>Update Permissions</p>
               </button>
             </div>
+          </div>
+          <div className="user-role-div">
+            <div className="user-lab">
+              <p>User Role</p>
+            </div>
+            <form className="role-form" onSubmit={updateRole}>
+              <div className="radio-div">
+                <label className="custom-radio">
+                  <input
+                    type="radio"
+                    name="role"
+                    value={`Admin`}
+                    checked={permissions.role === "Admin"}
+                    onChange={handleRadioChange}
+                  />
+                  <span className="radio-checkmark"></span>
+                  Admin
+                </label>
+                <label className="custom-radio">
+                  <input
+                    type="radio"
+                    name="role"
+                    value={`Editor`}
+                    checked={permissions.role === "Editor"}
+                    onChange={handleRadioChange}
+                  />
+                  <span className="radio-checkmark"></span>
+                  Editor
+                </label>
+                <label className="custom-radio">
+                  <input
+                    type="radio"
+                    name="role"
+                    value={`Viewer`}
+                    checked={permissions.role === "Viewer"}
+                    onChange={handleRadioChange}
+                  />
+                  <span className="radio-checkmark"></span>
+                  Viewer
+                </label>
+              </div>
+              <div className="sub-div w-full">
+                <button type="submit" disabled={selectedUser ? false : true}>
+                  <p>Update Role</p>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -67,4 +67,61 @@
   .sel {
     @apply text-mygreen;
   }
+  .user-role-div {
+    @apply flex w-full
+    flex-col 
+    justify-center
+    items-start;
+  }
+  .role-form {
+    @apply flex
+    w-full
+    flex-col
+    justify-between
+    items-center
+    mt-2
+    gap-3;
+  }
+  .radio-div {
+    @apply flex
+    w-full
+    justify-between
+    items-center;
+  }
+  .custom-radio input[type="radio"] {
+    display: none; /* Hide the radio button */
+  }
+  .custom-radio {
+    @apply flex items-center 
+    cursor-pointer
+    font-mono
+    text-black;
+  }
+  .radio-checkmark {
+    @apply w-[20px] h-[20px]
+    border-2 border-[#888]
+    rounded-full
+    mr-[10px]
+    relative;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .custom-radio input[type="radio"]:checked + .radio-checkmark {
+    @apply bg-[#4CAF50]
+    border-[#4CAF50];
+  }
+  .custom-radio input[type="radio"]:checked + .radio-checkmark::after {
+    content: "";
+    @apply w-[12px] h-[12px]
+    bg-white
+    rounded-full
+    absolute
+    top-[50%]
+    left-[50%]
+    transform
+    -translate-x-1/2
+    -translate-y-1/2;
+  }
+  .custom-radio:hover .radio-checkmark {
+    @apply border-[#4CAF50];
+  }
 }
